@@ -8,14 +8,14 @@ const logger = new Logger({
   transports: [
     new DailyRotateFile({
       name: 'info_log',
-      filename: path.join(__dirname, '../../logs/info.log'),
+      filename: path.join(__dirname, '../../koa-logs/info.log'),
       datePattern:'yyyy-MM-dd',
       prepend: true,
       level: 'info'
     }),
     new DailyRotateFile({
       name: 'error_log',
-      filename: path.join(__dirname, '../../logs/error.log'),
+      filename: path.join(__dirname, '../../koa-logs/error.log'),
       datePattern:'yyyy-MM-dd',
       prepend: true,
       level: 'error'

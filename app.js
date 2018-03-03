@@ -3,7 +3,7 @@ const Router = require('koa-router')
 const bodyParser = require('koa-bodyparser')
 const logger = require('./util/logger/logger')
 
-const userRouter = require('./routes/user')
+const userRouter = require('./routes/api/user')
 require('./service/db_connect')
 
 const app = new Koa()
