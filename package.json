@@ -1,0 +1,22 @@
+{
+  "name": "koa-denglu",
+  "version": "1.0.0",
+  "description": "用koa做的登录",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "pm2 start app.js"
+  },
+  "author": "liuwenshun",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.5.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.4.0",
+    "mysql2": "^1.5.2",
+    "pm2": "^2.10.1",
+    "sequelize": "^4.35.1",
+    "winston": "^2.4.0",
+    "winston-daily-rotate-file": "^1.7.2"
+  }
+}
