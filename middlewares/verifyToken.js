@@ -2,6 +2,7 @@ const tokenOpt = require('../util/token/index')
 const userService = require('../service/userInfoService')
 module.exports = async (ctx, next) => {
   try {
+    console.log(ctx.request.url)
     if (ctx.request.url.includes('/api/user/login') || ctx.request.url.includes('/api/user/register')) {
       await next()
       return
