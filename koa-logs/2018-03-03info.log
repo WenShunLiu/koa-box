@@ -1,4 +1,0 @@
-{"level":"info","message":"----服务启动成功，port: 8090----","timestamp":"2018-03-03T10:49:42.781Z"}
-{"level":"error","message":"HTTP ERROR id: 2 not found in users database","timestamp":"2018-03-03T10:49:55.064Z"}
-{"level":"info","message":"----服务启动成功，port: 8090----","timestamp":"2018-03-03T10:51:09.872Z"}
-{"level":"error","message":"HTTP ERROR id: 2 not found in users database","timestamp":"2018-03-03T10:51:17.157Z"}
