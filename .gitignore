@@ -5,3 +5,4 @@ yarn-error.log
 .idea/
 build/
 .vscode/
+gitpush.sh

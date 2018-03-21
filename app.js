@@ -20,7 +20,7 @@ app.use(verifyToken)
 
 app.use(routers.routes())
 
-const BASE_URL = '/api'
+const BASE_URL = '/kbox/api'
 router.use(BASE_URL, routers.routes())
 
 
