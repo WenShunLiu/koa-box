@@ -9,6 +9,10 @@ const routers = require('./routes/api/index')
 require('./service/db_connect')
 
 const app = new Koa()
+// 自定义koa状态码
+require('koa-custom-statuses')(app, {
+  '499': 'Authration Forbidden',
+});
 const router = new Router()
 app.use(bodyParser())
 
@@ -16,10 +20,8 @@ app.use(verifyToken)
 
 app.use(routers.routes())
 
-
-
-router.use('/api', routers.routes())
-
+const BASE_URL = '/api'
+router.use(BASE_URL, routers.routes())
 
 
 // error handle
@@ -31,7 +33,7 @@ app.on('error', (err, ctx) => {
   ctx.body = {
     retCode: 'error',
     retMsg: err.httpMsg || err.message,
-    url: err.status === 403 ? err.url : undefined
+    url: err.status === 499 ? err.url : undefined
   }
 })
 

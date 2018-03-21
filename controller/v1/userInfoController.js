@@ -1,6 +1,6 @@
-const userInfo = require('../service/userInfoService')
-const DBDataFoundError = require('../errors/db_data_found_error')
-const apiRes = require('../util/apiRes')
+const userInfo = require('../../service/v1/userInfoService')
+const DBDataFoundError = require('../../errors/db_data_found_error')
+const apiRes = require('../../util/apiRes')
 
 const getUserById = async (ctx, next) => {
   try {

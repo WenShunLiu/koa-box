@@ -1,11 +1,11 @@
 const path = require('path')
-const TOKEN_DEMO = require('../service/db_connect')
 const crypto = require('crypto')
 const pbkdf2Async = require('bluebird').promisify(crypto.pbkdf2)
-const logger = require('../util/logger/logger')
-const resourceFoundError = require('../errors/resource_found_error')
-const UserModel = path.join(__dirname, '../models/user')
-const tokenOpt = require('../util/token/index')
+const TOKEN_DEMO = require('../../service/db_connect')
+const logger = require('../../util/logger/logger')
+const resourceFoundError = require('../../errors/resource_found_error')
+const UserModel = path.join(__dirname, '../../models/user')
+const tokenOpt = require('../../util/token/index')
 const User = TOKEN_DEMO.import(UserModel)
 
 const getUserById = async (id) => {
