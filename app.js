@@ -37,6 +37,6 @@ app.on('error', (err, ctx) => {
   }
 })
 
-app.listen(8090)
-
-logger.info('----服务启动成功，port: 8090----')
+app.listen(8090, () => {
+  logger.info('----服务启动成功，port: 8090----')
+})
