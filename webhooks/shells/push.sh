@@ -1,5 +1,6 @@
 #!/bin/bash
 
+pwd &&
 cd .. &&
 rm -rf package-lock.json && 
 rm -rf node_modules/ && 
