@@ -5,6 +5,7 @@ const apiRes = (ctx, result, error) => {
     const dataerr =  new DBDataFoundError(...error)
     ctx.throw(404, dataerr)
   }
+  ctx.status = 200;
   ctx.body = {
     data: result,
     retCode: 'success'
