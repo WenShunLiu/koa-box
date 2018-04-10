@@ -7,10 +7,10 @@ const hookhandler = createHandler({
 })
 
 const webhook = async ctx => {
-  hookhandler(async ctx => {
-    ctx.status = 404;
-    ctx.body = 'no such location';
-  })
+  // hookhandler(async ctx => {
+  //   ctx.status = 404;
+  //   ctx.body = 'no such location';
+  // })
 };
 hookhandler.on('error', err => {
   logger.error(err);
