@@ -7,7 +7,7 @@ const webhookHandler = new koaWebhook({
 });
 
 webhookHandler.on('push', eve => {
-  const demo = spawn('sh', ['pwd']);
+  const demo = spawn('pwd');
   demo.stdout.on('data', data => {
     console.log('pwd', data.toString())
   })
