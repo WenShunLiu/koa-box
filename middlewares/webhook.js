@@ -7,6 +7,14 @@ const webhookHandler = new koaWebhook({
 });
 
 webhookHandler.on('push', eve => {
+  const demo = spawn('sh', ['pwd']);
+  demo.stdout.on('data', data => {
+    console.log('pwd', data.toString())
+  })
+
+
+
+
   const command = spawn('sh', ['../webhooks/shells/push.sh']);
   command.stderr.on('data', data => {
     console.log('push.sh  exc error');
