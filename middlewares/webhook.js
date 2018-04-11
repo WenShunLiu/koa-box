@@ -7,12 +7,27 @@ const webhookHandler = new koaWebhook({
 });
 
 webhookHandler.on('push', eve => {
-  const demo = spawn('pwd');
-  demo.stdout.on('data', data => {
+  // 观察脚本执行路径
+  const urlsh = spawn('pwd');
+  urlsh.stdout.on('data', data => {
     console.log('pwd', data.toString())
-  })
-
+  });
+  urlsh.on('close', code => {
+    console.log('urlsh  close', code);
+  });
+  urlsh.on('error', err => {
+    console.log('urlsh 启动失败 !');
+  });
+  // 执行自动部署子进程
   const command = spawn('sh', ['./webhooks/shells/push.sh']);
+  command.on('close', code => {
+    logger.info('自动部署子进程  close success');
+  });
+
+  command.on('error', err => {
+    logger.error('自动部署子进程 启动失败 !');
+    logger.error(err);
+  });
   command.stderr.on('data', data => {
     console.log('push.sh  exc error');
     logger.error(data.toString());
