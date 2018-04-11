@@ -1,4 +1,4 @@
-const koaWebhook = require('koa-github-webhook-handler');
+const koaWebhook = require('koa-github-webhook-handler').default;
 const { spawn } = require('child_process');
 const logger = require('../util/logger/logger');
 const webhookHandler = new koaWebhook({
