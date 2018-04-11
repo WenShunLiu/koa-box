@@ -2,7 +2,7 @@ const Koa = require('koa');
 const Router = require('koa-router');
 const bodyParser = require('koa-bodyparser');
 const verifyToken = require('./middlewares/verifyToken');
-
+const webhook = require('./middlewares/webhook');
 
 const logger = require('./util/logger/logger');
 const routers = require('./routes/api/index');
@@ -15,8 +15,8 @@ require('koa-custom-statuses')(app, {
 });
 const router = new Router();
 app.use(bodyParser());
-
 app.use(verifyToken);
+app.use(webhook.middleware());
 
 app.use(routers.routes());
 
