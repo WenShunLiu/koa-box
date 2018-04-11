@@ -2,7 +2,7 @@ const koaWebhook = require('koa-github-webhook-handler').default;
 const { spawn } = require('child_process');
 const logger = require('../util/logger/logger');
 const webhookHandler = new koaWebhook({
-  path: '/github/webhook',
+  path: '/kbox/api/v1/github/webhook',
   secret: 'qq649967242'
 });
 
