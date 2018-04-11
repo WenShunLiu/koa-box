@@ -17,6 +17,9 @@ webhookHandler.on('push', eve => {
     console.log('push.sh  exc error');
     logger.error(data.toString());
   });
+  command.stdout.on('data', data => {
+    console.log('脚本输出：', data.toString())
+  })
 });
 
 
