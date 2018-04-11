@@ -12,10 +12,7 @@ webhookHandler.on('push', eve => {
     console.log('pwd', data.toString())
   })
 
-
-
-
-  const command = spawn('sh', ['../webhooks/shells/push.sh']);
+  const command = spawn('sh', ['./webhooks/shells/push.sh']);
   command.stderr.on('data', data => {
     console.log('push.sh  exc error');
     logger.error(data.toString());
