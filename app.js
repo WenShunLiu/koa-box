@@ -4,6 +4,8 @@ const bodyParser = require('koa-bodyparser');
 const verifyToken = require('./middlewares/verifyToken');
 const webhook = require('./middlewares/webhook');
 
+const setStatus = require('./middlewares/setStatus');
+
 const logger = require('./util/logger/logger');
 const routers = require('./routes/api/index');
 require('./service/db_connect');
@@ -14,6 +16,7 @@ require('koa-custom-statuses')(app, {
   '499': 'Authration Forbidden',
 });
 const router = new Router();
+app.use(setStatus);
 app.use(bodyParser());
 app.use(verifyToken);
 app.use(webhook.middleware());
